@@ -8,42 +8,42 @@
     <link href="styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <h1>String Rotations</h1>
     <div id="instructions">
-      <h1>String Rotations</h1>
-      <p>Create a function that accepts a string argument and returns an array of strings, which are shifted versions of the argument string.</p>
+      <h2>Instructions</h2>
+      <div>
+        <p>Create a function that accepts a string argument and returns an array of strings, which are shifted versions of the argument string.</p>
 
-      <h3>Sample Input</h3>
-      <p>"Hello"</p>
+        <h3>Sample Input</h3>
+        <p>"Hello"</p>
 
-      <h3>Sample Output</h3>
-      <p>["elloH", "lloHe", "loHel", "oHell", "Hello"]</p>
-      <p>As you can see from the example above, each element shifts the first character of the previous version to the end.</p>
+        <h3>Sample Output</h3>
+        <p>["elloH", "lloHe", "loHel", "oHell", "Hello"]</p>
+        <p>As you can see from the example above, each element shifts the first character of the previous version to the end.</p>
 
-      <h3>Parameters</h3>
-      <ul>
-        <li>The original string should be included in the output array.</li>
-        <li>The order matters; each element of the output array should be the shifted version of the previous element.</li>
-        <li>The output array should have the same length as the input string.</li>
-        <li>The function should return an empty array when a zero-length String is provided as the argument.</li>
-      </ul>
-
-      <br>
-
-      <button onClick="getString()">Let's Go!</button>
-
+        <h3>Parameters</h3>
+        <ul>
+          <li>The original string should be included in the output array.</li>
+          <li>The order matters; each element of the output array should be the shifted version of the previous element.</li>
+          <li>The output array should have the same length as the input string.</li>
+          <li>The function should return an empty array when a zero-length String is provided as the argument.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The Program</h3>
+        <input type="text" id="str" placeholder="Enter text here.">
+        <button onClick="rotateString(str.value)">Let's Rotate!</button>
+      </div>
     </div>
 
     <div id="scriptOutput">
-      <h3>The Results</h3>
+      <h2>The Results</h2>
       <div id="outputStrings">
       </div>
     </div>
 
     <script>
-      function getString() {
-
-        // Prompt user for a word and store the string in variable.
-        var theString = prompt("Enter a word.");
+      function rotateString(theString) {
         // The string length will be used to iterate the loop.
         var stringLength = theString.length;
         // Split the string into an Array.
