@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      String Rotations
+    </title>
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="instructions">
+      <h1>String Rotations</h1>
+      <p>Create a function that accepts a string argument and returns an array of strings, which are shifted versions of the argument string.</p>
+
+      <h3>Sample Input</h3>
+      <p>"Hello"</p>
+
+      <h3>Sample Output</h3>
+      <p>["elloH", "lloHe", "loHel", "oHell", "Hello"]</p>
+      <p>As you can see from the example above, each element shifts the first character of the previous version to the end.</p>
+
+      <h3>Parameters</h3>
+      <ul>
+        <li>The original string should be included in the output array.</li>
+        <li>The order matters; each element of the output array should be the shifted version of the previous element.</li>
+        <li>The output array should have the same length as the input string.</li>
+        <li>The function should return an empty array when a zero-length String is provided as the argument.</li>
+      </ul>
+
+      <br>
+
+      <button onClick="getString()">Let's Go!</button>
+
+    </div>
+
+    <div id="scriptOutput">
+      <h3>The Results</h3>
+      <div id="outputStrings">
+      </div>
+    </div>
+
+    <script>
+      function getString() {
+
+        // Prompt user for a word and store the string in variable.
+        var theString = prompt("Enter a word.");
+        // The string length will be used to iterate the loop.
+        var stringLength = theString.length;
+        // Split the string into an Array.
+        var stringArray = theString.split("");
+
+        // Clear the Results area if there are results.
+        var results = document.getElementById("outputStrings");
+        // This loop removes first child element until none left.
+        while (results.hasChildNodes()) {
+            results.removeChild(results.childNodes[0]);
+        }
+
+        // This loop creates the new strings.
+        for (a = 0;a < stringLength;a++) {
+          // Pull the first letter out of the Array.
+          firstLetter = stringArray.shift();
+          // Add the first letter to the end of the old array.
+          stringArray = stringArray.concat(firstLetter);
+          // Create a paragraph to add our new strings to.
+          var p = document.createElement('p');
+          // Turn the arrays into strings ready to be added.
+          var resultText = document.createTextNode(stringArray.join(""));
+          // Put the strings into their paragraph tags.
+          p.appendChild(resultText);
+          // Locate the results area.
+          var results = document.getElementById("outputStrings");
+          // Add the ne paragraph.
+          results.appendChild(p);
+
+        } // End for() loop
+
+      } // End function getString()
+    </script>
+  </body>
+</html>

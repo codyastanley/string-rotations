@@ -1,0 +1,11 @@
+#instructions {
+  width: 50%;
+  float: left;
+  margin-bottom: 3.0rem;
+}
+
+#scriptOutput {
+  width: 50%;
+  float: right;
+  color:red;
+}
