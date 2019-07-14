@@ -8,8 +8,15 @@ h1,h2 {
   margin-bottom: 3.0rem;
 }
 
-#scriptOutput {
-  width: 50%;
-  float: right;
+#program {
+  width: 25%;
+  float: left;
+}
+#output {
+  width: 25%;
+  float: left;
+}
+
+#results {
   color:red;
 }
